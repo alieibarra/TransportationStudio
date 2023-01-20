@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>HTML Email Base</title>
+	</head>
+	<body style="background-color: #eee; font-size: 16px;">
+		<?php include 'postform.php'; ?>
+		<div style="max-width: 600px; min-width: 200px; background-color: #fff; padding: 20px; margin: auto; ">
+			<h1>Requester Information: </h1>
+				<h3>Requester Name: <? php echo $name; ?></h3>
+				<h3>Requester Email: </h3>
+				<h3>Requester Phone: </h3>
+			<h1>Vendor Information</h1>
+				<h3>Vendor Name: </h3>
+				<h3>Vendor Address: </h3>
+			<h1>Run Details</h1>
+				<h3>Run Type: </h3>
+				<h3>Run Details: </h3>
+		</div>
+		<script>
+			const name = document.getElementById('name');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,223 @@
+<html>
+    <head>
+        <!-- FullCalendar CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+        <!-- jQuery and Moment.js -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+        <!-- FullCalendar JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="/manifest.json">
+        <title>Driver Rundown</title>
+
+    </head>
+
+    <body class="container-fluid" >
+        <nav class="navbar navbar-expand-lg bg-light sticky-top" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">TS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="runrequest.html">Run Request</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Transpo Tools
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="runqueue.html">Run Queue</a></li>
+                  <li><a class="dropdown-item" href="calendar.html">Run Calendar</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="driverdetail.html">Driver Detail</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="driverrundown.html">Driver Rundown</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <button class="btn btn-outline-success" type="submit">
+              <a href="index.html">Logout</a>
+            </button>
+          </div>
+        </div>
+        </nav>
+        </br>
+
+        <body>
+            <div class="container-fluid" id="printable">
+                <h2 class="pull-left">Driver Daily Rundown</h2>
+                <p>1/1/2023</p>
+                <button class="btn btn-primary" onclick="location.href='mailto:callboard@ht399.org?subject=Driver%20Daily%20Rundown&body=Email%20Body'" id="callboard">
+                    Send to Callboard
+                </button>
+                <button class="btn btn-primary" onclick="window.print()" id="printButton">Print
+                </button>
+
+                <div id="printable">
+                    <h4>On Production</h4>
+                    <table class="table" id="onProduction">
+                        <thead>
+                        <tr>
+                            <th>Driver Name</th>
+                            <th>Truck</th>
+                            <th>Call Time</th>
+                            <th>Wrap Time</th>
+                            <th>Group</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th class="hide-on-print">Rate</th>
+                            <th class="hide-on-print">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>John Doe</option>
+                                    <option>Jane Smith</option>
+                                    <option>E.O.</option>
+                                </select>
+                            </td>
+                            <td>Camera Truck</td>
+                            <td>5.0</td>
+                            <td>19.5</td>
+                            <td>1</td>
+                            <td>johndoe@example.com</td>
+                            <td>555-555-5555</td>
+                            <td class="hide-on-print">$43.70</td>
+                            <td class="hide-on-print">
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <select class="form-control">
+                                    <option>John Doe</option>
+                                    <option>Jane Smith</option>
+                                    <option>E.O.</option>
+                                </select>
+                            </td>
+                            <td>Stakebed</td>
+                            <td>6.0</td>
+                            <td>18.5</td>
+                            <td>2</td>
+                            <td>janesmith@example.com</td>
+                            <td>555-555-5556</td>
+                            <td class="hide-on-print">$40.52</td>
+                            <td class="hide-on-print">
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>    
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div> 
+                <br><br>  
+                <div id="printable">
+                    <h4>Off Production</h4>
+                    <table class="table" id="onProduction">
+                        <thead>
+                        <tr>
+                            <th>Driver Name</th>
+                            <th>Truck</th>
+                            <th>Call Time</th>
+                            <th>Wrap Time</th>
+                            <th>Group</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th class="hide-on-print">Rate</th>
+                            <th class="hide-on-print">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>John Doe</option>
+                                    <option>Jane Smith</option>
+                                    <option>E.O.</option>
+                                </select>
+                            </td>
+                            <td>Construction</td>
+                            <td>5.0</td>
+                            <td>19.5</td>
+                            <td>1</td>
+                            <td>johndoe@example.com</td>
+                            <td>555-555-5555</td>
+                            <td class="hide-on-print">$43.70</td>
+                            <td class="hide-on-print">
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <select class="form-control">
+                                    <option>John Doe</option>
+                                    <option>Jane Smith</option>
+                                    <option>E.O.</option>
+                                </select>
+                            </td>
+                            <td>Rigging Electric</td>
+                            <td>6.0</td>
+                            <td>18.5</td>
+                            <td>2</td>
+                            <td>janesmith@example.com</td>
+                            <td>555-555-5556</td>
+                            <td class="hide-on-print">$40.52</td>
+                            <td class="hide-on-print">
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>    
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>   
+            </div>
+           
+            <style>
+                /* Add styles for printing */
+                @media print {
+                  #printable {
+                    width: 100%;
+                    padding: 20px;
+                    font-size: 14px;
+                    font-family: Arial, sans-serif;
+                  }
+                  #navbar {
+                    display: none;
+                  }
+                  #callboard {
+                    display: none;
+                  }
+                  #printButton {
+                    display: none;
+                  }
+                  .hide-on-print {
+                    display:none !important;
+                  }
+                  
+                }
+            </style>
+            
+        </body>
+
+</html>
